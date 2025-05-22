@@ -10,9 +10,14 @@
 
 <?php
             
-            if(isset($_GET['first_name']) &&$_GET['first_name'] !== '' ) {
+            if(isset($_GET['first_name']) && $_GET['first_name'] !== '' ) {
                 echo "Bonjour, " .$_GET['first_name'];
             }
+
+            else if($_POST['first_name'] && $_POST['first_name'] !==''){
+                echo "Bonjour, " .$_POST['first_name'];
+            }
+            
             else{
                 echo "Bonjour, Anonyme";
             }
