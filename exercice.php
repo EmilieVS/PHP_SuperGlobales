@@ -8,11 +8,18 @@
 </head>
 <body>
 
-    <!-- $id_session = session_id() -->
+
+<form action="exercice.php" method="post">
+ <p>Votre nom : <input type="text" name="first_name" /></p>
+ <p><input type="submit" value="OK"></p>
+</form>
+    
     <?php
     session_start();
-    $id_session = session_id();
+    $_SESSION = session_id();
            
+
+    
 
             if($_GET['first_name'] && $_GET['first_name'] !== '' ) {
                 echo "Bonjour, " .$_GET['first_name'];
@@ -25,14 +32,16 @@
             else{
                 echo "Bonjour, Anonyme";
             }
+            
+           unset($_SESSION["first_name"]); //faire le reset
             ?>
 
+<br>
+<br>
 
-<form action="exercice.php" method="post">
- <p>Votre nom : <input type="text" name="first_name" /></p>
- <p><input type="submit" value="OK"></p>
+<form action="">
+<input type="submit" name="Reset" value="Reset">
 </form>
-
     
 </body>
 </html>
