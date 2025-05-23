@@ -8,9 +8,13 @@
 </head>
 <body>
 
-<?php
-            
-            if(isset($_GET['first_name']) && $_GET['first_name'] !== '' ) {
+    <!-- $id_session = session_id() -->
+    <?php
+    session_start();
+    $id_session = session_id();
+           
+
+            if($_GET['first_name'] && $_GET['first_name'] !== '' ) {
                 echo "Bonjour, " .$_GET['first_name'];
             }
 
